@@ -98,7 +98,7 @@ module.exports = function MinimalLogger( options ) {
 				const [ betterModulesDone, betterAllModules ] = moduleProgress.split( '/' );
 				const moduleDetails = `${ betterModulesDone } of ${ betterAllModules } :: ${ betterModuleName }`;
 
-				logLine += chalk.grey( ` (${ moduleDetails })` );
+				logLine += chalk.black_bt( ` (${ moduleDetails })` );
 
 			}
 
@@ -117,7 +117,7 @@ module.exports = function MinimalLogger( options ) {
 			logLine += chalk.white( 'Optimize modules ...' );
 			const formattedMessageExtra = progress === 0.91 ? ' -- may take a while' : ''; // Add some extra info (calming devs down)
 
-			logLine += chalk.grey( ` (${ message }${ formattedMessageExtra })` );
+			logLine += chalk.black_bt( ` (${ message }${ formattedMessageExtra })` );
 
 		}
 

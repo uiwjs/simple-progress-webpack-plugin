@@ -93,7 +93,7 @@ module.exports = function ExpandedLogger( options ) {
 
 				const [ betterModulesDone, betterAllModules ] = moduleProgress.split( '/' );
 				const moduleDetails = `${ betterModulesDone } of ${ betterAllModules } :: ${ betterModuleName }`;
-				console.log( chalk.grey( `    ${ figures.arrowRight } [${ roundedSubProgress }%] ${ moduleDetails }` ) );
+				console.log( chalk.black_bt( `    ${ figures.arrowRight } [${ roundedSubProgress }%] ${ moduleDetails }` ) );
 
 			}
 
@@ -116,7 +116,7 @@ module.exports = function ExpandedLogger( options ) {
 			const formattedMessage = `${ message[ 0 ].toUpperCase() }${ message.slice( 1 ) }`;
 			const formattedMessageExtra = progress === 0.91 ? ' -- may take a while' : ''; // Add some extra info (calming devs down)
 
-			console.log( chalk.grey( `    ${ figures.arrowRight } [${ subProgress }%] ${ formattedMessage }${ formattedMessageExtra } ...` ) );
+			console.log( chalk.black_bt( `    ${ figures.arrowRight } [${ subProgress }%] ${ formattedMessage }${ formattedMessageExtra } ...` ) );
 
 		}
 

@@ -106,7 +106,7 @@ module.exports = function CompactLogger( options ) {
 
 				const [ betterModulesDone, betterAllModules ] = moduleProgress.split( '/' );
 				const moduleDetails = `${ betterModulesDone } of ${ betterAllModules } :: ${ betterModuleName }`;
-				logLines.push( chalk.grey( `    ${ figures.arrowRight } ${ moduleDetails }` ) );
+				logLines.push( chalk.black_bt( `    ${ figures.arrowRight } ${ moduleDetails }` ) );
 
 			}
 
@@ -132,7 +132,7 @@ module.exports = function CompactLogger( options ) {
 			const formattedMessage = `${ message[ 0 ].toUpperCase() }${ message.slice( 1 ) }`;
 			const formattedMessageExtra = progress === 0.91 ? ' -- may take a while' : ''; // Add some extra info (calming devs down)
 
-			logLines.push( chalk.grey( `    ${ figures.arrowRight } ${ formattedMessage }${ formattedMessageExtra } ...` ) );
+			logLines.push( chalk.black_bt( `    ${ figures.arrowRight } ${ formattedMessage }${ formattedMessageExtra } ...` ) );
 
 		} else if ( progress >= 0.95 ) {
 
