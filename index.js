@@ -21,7 +21,8 @@ module.exports = function SimpleProgressWebpackPlugin( options ) {
 
 	const internalOptions = {
 		format: getOption( options, 'format', 'compact' ),
-		color: getOption( options, 'color', true )
+		color: getOption( options, 'color', true ),
+		name: getOption(options, 'name', 'Webpack'),
 	};
 
 	// Return the correct progress plugin

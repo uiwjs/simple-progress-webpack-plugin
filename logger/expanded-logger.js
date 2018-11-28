@@ -2,7 +2,7 @@
 
 const path = require( 'path' );
 
-const chalk = require( 'chalk' );
+const chalk = require( 'colors-cli' );
 const figures = require( 'figures' );
 
 const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
@@ -22,7 +22,7 @@ module.exports = function ExpandedLogger( options ) {
 	let previousStep = 0;
 
 	// Initial log
-	console.log( chalk.white( 'Webpack: Starting ...' ) );
+	console.log(chalk.white( `${options.name}: Starting ...` ) );
 
 	/**
 	 * Use the webpack-internal progress plugin as the base of the logger
@@ -141,7 +141,7 @@ module.exports = function ExpandedLogger( options ) {
 			const finishTime = new Date().getTime();
 			const processTime = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
 
-			console.log( chalk.white( `\nWebpack: Finished after ${ processTime } seconds.\n` ) );
+			console.log(chalk.white(`\n${options.name}: Finished after ${ processTime } seconds.\n` ) );
 
 		}
 

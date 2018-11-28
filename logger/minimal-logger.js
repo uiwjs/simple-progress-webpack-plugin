@@ -2,7 +2,7 @@
 
 const path = require( 'path' );
 
-const chalk = require( 'chalk' );
+const chalk = require( 'colors-cli' );
 const log = require( 'log-update' );
 
 const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
@@ -22,7 +22,7 @@ module.exports = function MinimalLogger( options ) {
 	let previousStep = 0;
 
 	// Initial log
-	let logLine = 'Webpack: Starting ...';
+	let logLine = `${options.name}: Starting ...`;
 	log( logLine );
 
 	/**
@@ -142,7 +142,7 @@ module.exports = function MinimalLogger( options ) {
 			const finishTime = new Date().getTime();
 			const processTime = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
 
-			logLine = chalk.white( `Webpack: Finished after ${ processTime } seconds.\n` ); // Overwrite
+			logLine = chalk.white(`${options.name}: Finished after ${ processTime } seconds.\n` ); // Overwrite
 
 		}
 

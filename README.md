@@ -29,7 +29,7 @@ To get the **simple-progress-webpack-plugin** via **npm**, simply add it as a ne
 install`. Alternatively, run the following command:
 
 ``` bash
-npm install simple-progress-webpack-plugin --save-dev
+npm install @kkt/simple-progress-webpack-plugin --save-dev
 ```
 
 <br>
@@ -66,6 +66,14 @@ plugins: [
 
 The following is a list of available logging output formats. While `compact` is the default format, `expanded` is the recommended one for
 being used within a CI environment.
+
+<br>
+
+### `name`
+
+- Default: `Webpack`
+
+Name.
 
 <br>
 

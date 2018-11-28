@@ -2,7 +2,7 @@
 
 const path = require( 'path' );
 
-const chalk = require( 'chalk' );
+const chalk = require( 'colors-cli' );
 const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
 
 /**
@@ -19,7 +19,7 @@ module.exports = function VerboseLogger( options ) {
 
 	// Initial logs
 	let logLine;
-	console.log( `${ getTimePrefix() } Webpack: Starting ...\n` );
+	console.log(`${getTimePrefix()} ${options.name}: Starting ...\n` );
 
 	/**
 	 * Use the webpack-internal progress plugin as the base
@@ -66,7 +66,7 @@ module.exports = function VerboseLogger( options ) {
 			const finishTime = new Date().getTime();
 			const processTime = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
 
-			logLine = `Webpack: Finished after ${ processTime } seconds.\n`;
+			logLine = `${options.name}: Finished after ${ processTime } seconds.\n`;
 
 		}
 
@@ -74,7 +74,7 @@ module.exports = function VerboseLogger( options ) {
 		if ( progress === 1 ) {
 			console.log( `\n${ getTimePrefix() } ${ logLine }` );
 		} else {
-			console.log( `${ getTimePrefix() } Webpack (${ Math.round( progress * 100 ) }%) - ${ logLine }` );
+			console.log(`${getTimePrefix()} ${options.name} (${ Math.round( progress * 100 ) }%) - ${ logLine }` );
 		}
 
 	} );
